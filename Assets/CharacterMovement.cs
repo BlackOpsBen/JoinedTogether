@@ -55,4 +55,14 @@ public class CharacterMovement : MonoBehaviour
             currentDestination = taskDestination;
         }
     }
+
+    public float GetDistanceToRope()
+    {
+        return Vector2.Distance(transform.position, ropeDestination.position);
+    }
+
+    public float GetDistanceToTask()
+    {
+        return Vector2.Distance(transform.position, taskDestination.position);
+    }
 }
