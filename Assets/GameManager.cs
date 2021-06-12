@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
 
     private bool hasObjective = false;
 
@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
     public void SetHasObjective(bool value)
     {
         hasObjective = value;
+        if (value)
+        {
+            MusicManager.Instance.SwapTracks();
+        }
     }
 
     public float GetAlertLevelPercentage()

@@ -12,7 +12,7 @@ public class LevelBuilder : MonoBehaviour
     [SerializeField] GameObject[] specialPieces;
     [SerializeField] GameObject floorPiece;
 
-    public static LevelBuilder Instance;
+    public static LevelBuilder Instance { get; private set; }
 
     private void Awake()
     {

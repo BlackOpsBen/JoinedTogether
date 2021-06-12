@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7562073961237531972}
   - component: {fileID: 7562073961237531975}
   - component: {fileID: 7562073961237531974}
+  - component: {fileID: 8065337429053274986}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -89,6 +90,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 01ad623c-2808-43ea-af61-45350d2c60e6
     m_ActionName: Default/Grab Right[/XInputControllerWindows/rightTrigger,/Keyboard/period]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8065337429053274986}
+        m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 675eaafb-40c0-4c9d-aef0-9af8dd1ab2ea
+    m_ActionName: Default/Pause[/Keyboard/enter,/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Default
@@ -108,3 +125,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HackerMovement: {fileID: 0}
   CleanerMovement: {fileID: 0}
+--- !u!114 &8065337429053274986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562073961237531977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7412089f7f281b4e8247115aacb0a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
