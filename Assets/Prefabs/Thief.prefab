@@ -178,6 +178,7 @@ MonoBehaviour:
   downSpeed: 2
   speedMultiplier: 2
   maxYPos: -1
+  floorStopDistance: 1
 --- !u!61 &2558592482970841826
 BoxCollider2D:
   m_ObjectHideFlags: 0

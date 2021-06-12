@@ -85,7 +85,7 @@ TextureImporter:
     second: Laser_R
   - first:
       213: 9048288764117043530
-    second: Environment_27
+    second: Diamond
   - first:
       213: -3707002486540017073
     second: Environment_28
@@ -109,10 +109,10 @@ TextureImporter:
     second: Floor_R
   - first:
       213: -8895750759828453358
-    second: Environment_35
+    second: Floor_Platform_L
   - first:
       213: -420011917627683574
-    second: Environment_36
+    second: Floor_Platform_R
   - first:
       213: -4963233293970173821
     second: Environment_37
@@ -886,7 +886,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Environment_27
+      name: Diamond
       rect:
         serializedVersion: 2
         x: 48
@@ -1036,7 +1036,7 @@ TextureImporter:
       name: Floor_R
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 48
         width: 16
         height: 16
@@ -1054,10 +1054,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Environment_35
+      name: Floor_Platform_L
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 48
         width: 16
         height: 16
@@ -1075,10 +1075,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Environment_36
+      name: Floor_Platform_R
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 48
         width: 16
         height: 16
