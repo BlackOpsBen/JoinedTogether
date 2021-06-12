@@ -12,8 +12,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        else
+        {
         Instance = this;
+        }
     }
 
     private bool hasObjective = false;

@@ -12,6 +12,20 @@ public class LevelBuilder : MonoBehaviour
     [SerializeField] GameObject[] modularPieces;
     [SerializeField] GameObject floorPiece;
 
+    public static LevelBuilder Instance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     private void Start()
     {
         for (int i = 0; i < depth; i++)
@@ -37,8 +51,13 @@ public class LevelBuilder : MonoBehaviour
         }
     }
 
-    public int GetFloorYPos()
+    public float GetFloorYPos()
     {
         return depth * pieceHeight * -1;
+    }
+
+    public int GetDepth()
+    {
+        return depth;
     }
 }

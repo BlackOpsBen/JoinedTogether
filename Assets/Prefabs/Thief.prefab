@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 3347937305425979954}
   - component: {fileID: 2558592482970841826}
   - component: {fileID: 8295444060061674209}
+  - component: {fileID: 7325228043544108138}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -147,7 +148,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -436448189
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 3542127132570728493, guid: d5b2f25a612fc6f43809b2d9326b648b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -226,6 +227,22 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &7325228043544108138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3347937305425979953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46273560b3b7f1e49804dd129ab54a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialYOffset: 2
+  ySize: 2
+  ropePerMod: 3
+  ropePrefab: {fileID: 8625586515908365297, guid: 19a90fefaebc471478bab1f2757f4100, type: 3}
 --- !u!1 &8622343474386369806
 GameObject:
   m_ObjectHideFlags: 0
