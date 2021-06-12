@@ -20,7 +20,6 @@ public class SpotPlayer : MonoBehaviour
     private void Update()
     {
         float cleanerDist = Vector2.Distance(cleaner.transform.position, transform.position);
-        Debug.LogWarning("Cleaner distance: " + cleanerDist);
         if (cleanerDist < spotDist)
         {
             patrol.SetWalking(false);
@@ -36,5 +35,6 @@ public class SpotPlayer : MonoBehaviour
     {
         Debug.LogWarning("Guard spots you!");
         // TODO implement spotting
+        GameManager.Instance.AdjustAlertLevel(GameManager.Instance.GUARD_ALERT_RATE * Time.deltaTime);
     }
 }
