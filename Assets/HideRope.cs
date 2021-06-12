@@ -15,6 +15,5 @@ public class HideRope : MonoBehaviour
     private void Update()
     {
         sr.enabled = transform.position.y < yPosHideThreshold;
-        Debug.Log(transform.position.y);
     }
 }
