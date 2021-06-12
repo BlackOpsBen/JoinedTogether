@@ -10,6 +10,7 @@ public class CollectObjective : MonoBehaviour
         {
             GameManager.Instance.SetHasObjective(true);
             // TODO play sound
+            AudioManager.Instance.PlayDialog(AudioManager.CHARACTER_THIEF, AudioManager.CATEGORY_THIEF_GOT_IT, true);
             // TODO trigger new music
             // TODO feedback to player to get out of there!
             Destroy(gameObject);

@@ -20,6 +20,9 @@ public class ThiefMovement : MonoBehaviour
 
     private LevelBuilder levelBuilder;
 
+    private bool hasSpokenDirection = false;
+    private int prevDirection = 0;
+
     private void Start()
     {
         levelBuilder = FindObjectOfType<LevelBuilder>();
@@ -54,17 +57,38 @@ public class ThiefMovement : MonoBehaviour
         }
     }
 
-    private void Move(int direction)
+    private void Move(int direction) // TODO separate Movement from Dialog
     {
+        if (direction != prevDirection)
+        {
+            hasSpokenDirection = false;
+        }
+
+        prevDirection = direction;
+
         float speed;
 
         if (direction < 0)
         {
             speed = downSpeed;
+
+            if (!hasSpokenDirection)
+            {
+                AudioManager.Instance.PlayDialog(AudioManager.CHARACTER_THIEF, AudioManager.CATEGORY_THIEF_DOWN, true);
+                hasSpokenDirection = true;
+            }
         }
         else
         {
             speed = upSpeed;
+            if (!hasSpokenDirection)
+            {
+                if (direction > 0)
+                {
+                    AudioManager.Instance.PlayDialog(AudioManager.CHARACTER_THIEF, AudioManager.CATEGORY_THIEF_UP, true);
+                    hasSpokenDirection = true;
+                }
+            }
         }
 
         float newYPos = Mathf.Min(transform.position.y + speed * speedMultiplier * direction * Time.deltaTime, maxYPos);

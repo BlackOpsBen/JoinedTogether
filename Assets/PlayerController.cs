@@ -40,4 +40,9 @@ public class PlayerController : MonoBehaviour
             isGrabbingRight = false;
         }
     }
+
+    public bool GetIsGrabbingRight()
+    {
+        return isGrabbingRight;
+    }
 }

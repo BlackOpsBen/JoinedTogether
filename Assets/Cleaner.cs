@@ -9,7 +9,7 @@ public class Cleaner : MonoBehaviour
         if (collision.GetComponent<Patrol>())
         {
             Destroy(collision.gameObject);
-            Debug.LogWarning(gameObject.name + " defeated " + collision.name);
+            AudioManager.Instance.PlayDialog(AudioManager.CHARACTER_CLEANER, AudioManager.CATEGORY_CLEANER_KILL, true);
         }
     }
 }
