@@ -19,7 +19,7 @@ TextureImporter:
     second: Debug
   - first:
       213: 3411122762858479303
-    second: Environment_5
+    second: Pulley
   - first:
       213: -6081611462039590206
     second: Environment_6
@@ -424,7 +424,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Environment_5
+      name: Pulley
       rect:
         serializedVersion: 2
         x: 80
