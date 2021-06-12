@@ -8,6 +8,10 @@ public class ThiefMovement : MonoBehaviour
     [SerializeField] CharacterMovement Hacker;
     [SerializeField] CharacterMovement Cleaner;
     [SerializeField] float useThreshold = 1f;
+    [SerializeField] float upSpeed = 1f;
+    [SerializeField] float downSpeed = 2f;
+    [SerializeField] float speedMultiplier = 1f;
+    [SerializeField] float maxYPos = -1f;
 
     bool isLeftHeld = false;
     bool isRightHeld = false;
@@ -44,6 +48,19 @@ public class ThiefMovement : MonoBehaviour
 
     private void Move(int direction)
     {
-        Debug.Log("Move direction: " + direction.ToString());
+        float speed;
+
+        if (direction < 0)
+        {
+            speed = downSpeed;
+        }
+        else
+        {
+            speed = upSpeed;
+        }
+
+        float newYPos = Mathf.Min(transform.position.y + speed * speedMultiplier * direction * Time.deltaTime, maxYPos);
+
+        transform.position = new Vector2(transform.position.x, newYPos);
     }
 }

@@ -76,13 +76,13 @@ TextureImporter:
     second: Environment_23
   - first:
       213: 6521106915325849606
-    second: Environment_24
+    second: Laser_L
   - first:
       213: -1748565696620533181
-    second: Environment_25
+    second: Laser_Mid
   - first:
       213: -5391879529046575787
-    second: Environment_26
+    second: Laser_R
   - first:
       213: 9048288764117043530
     second: Environment_27
@@ -823,7 +823,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Environment_24
+      name: Laser_L
       rect:
         serializedVersion: 2
         x: 0
@@ -844,7 +844,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Environment_25
+      name: Laser_Mid
       rect:
         serializedVersion: 2
         x: 16
@@ -865,7 +865,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Environment_26
+      name: Laser_R
       rect:
         serializedVersion: 2
         x: 32

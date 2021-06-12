@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class FollowThief : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Transform Thief;
+    [SerializeField] float lerpSpeed = 1f;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        Vector3 lerpPos = Vector3.Lerp(transform.position, Thief.position, Time.deltaTime * lerpSpeed);
+        Vector3 newPos = new Vector3(lerpPos.x, lerpPos.y, transform.position.z);
+        transform.position = newPos;
     }
 }
