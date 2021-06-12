@@ -20,6 +20,7 @@ public class SpotPlayer : MonoBehaviour
     private void Update()
     {
         float cleanerDist = Vector2.Distance(cleaner.transform.position, transform.position);
+        Debug.LogWarning("Cleaner distance: " + cleanerDist);
         if (cleanerDist < spotDist)
         {
             patrol.SetWalking(false);

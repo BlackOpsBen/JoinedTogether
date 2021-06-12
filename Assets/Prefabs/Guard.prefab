@@ -168,8 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0cec59d70bf59e49833a0d6998d5812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spotHelper: {fileID: 292145975}
-  cleaner: {fileID: 0}
+  spotDist: 2.5
 --- !u!1 &4275386035211248309
 GameObject:
   m_ObjectHideFlags: 0
