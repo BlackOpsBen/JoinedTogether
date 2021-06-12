@@ -13,9 +13,15 @@ public class Hacker : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        AudioManager.Instance.StopSFXLoop("Hacking");
+    }
+
     private void Hack()
     {
         GameManager.Instance.AdjustAlertLevel(GameManager.Instance.HACK_ALERT_RATE * Time.deltaTime);
         // TODO implement hacking feedback/fx
+        AudioManager.Instance.PlaySFXLoop("Hacking");
     }
 }

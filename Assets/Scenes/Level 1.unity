@@ -1196,7 +1196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5d1dbde71108f48936f28f6d18619b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFX: []
+  SFX:
+  - name: Hacking
+    clip: {fileID: 8300000, guid: 2af00dd5ee67ae34bbd3f65e9ed6a687, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
   characterSoundGroups:
   - name: Thief
     dialogCategories:
@@ -2758,18 +2763,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7567086475123945904, guid: 0f2156daf10d9d84b8d1e9762e9b8dc2, type: 3}
-      propertyPath: m_SortingLayer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7567086475123945904, guid: 0f2156daf10d9d84b8d1e9762e9b8dc2, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7567086475123945904, guid: 0f2156daf10d9d84b8d1e9762e9b8dc2, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -285784907
-      objectReference: {fileID: 0}
     - target: {fileID: 7567086475123945905, guid: 0f2156daf10d9d84b8d1e9762e9b8dc2, type: 3}
       propertyPath: m_RootOrder
       value: 13

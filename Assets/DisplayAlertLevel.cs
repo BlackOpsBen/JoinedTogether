@@ -11,7 +11,6 @@ public class DisplayAlertLevel : MonoBehaviour
     private void Start()
     {
         fullHeight = fillBar.rect.height;
-        Debug.LogWarning("fullHeight: " + fullHeight);
     }
 
     private void Update()
