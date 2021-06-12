@@ -100,13 +100,13 @@ TextureImporter:
     second: Environment_31
   - first:
       213: -2027768988174841985
-    second: Environment_32
+    second: Floor_L
   - first:
       213: 6349013988125360775
-    second: Environment_33
+    second: Floor_Mid
   - first:
       213: -7963306881671151232
-    second: Environment_34
+    second: Floor_R
   - first:
       213: -8895750759828453358
     second: Environment_35
@@ -258,7 +258,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -270,7 +270,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -282,7 +282,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -294,7 +294,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -306,7 +306,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -991,7 +991,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Environment_32
+      name: Floor_L
       rect:
         serializedVersion: 2
         x: 0
@@ -1012,7 +1012,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Environment_33
+      name: Floor_Mid
       rect:
         serializedVersion: 2
         x: 16
@@ -1033,7 +1033,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Environment_34
+      name: Floor_R
       rect:
         serializedVersion: 2
         x: 32

@@ -12,11 +12,19 @@ public class ThiefMovement : MonoBehaviour
     [SerializeField] float downSpeed = 2f;
     [SerializeField] float speedMultiplier = 1f;
     [SerializeField] float maxYPos = -1f;
+    [SerializeField] float floorStopDistance = 1f;
+    private float minYPos = float.MaxValue;
 
     bool isLeftHeld = false;
     bool isRightHeld = false;
 
-    private int moveDirection = 0;
+    private LevelBuilder levelBuilder;
+
+    private void Start()
+    {
+        levelBuilder = FindObjectOfType<LevelBuilder>();
+        minYPos = levelBuilder.GetFloorYPos();
+    }
 
     private void Update()
     {
@@ -60,6 +68,7 @@ public class ThiefMovement : MonoBehaviour
         }
 
         float newYPos = Mathf.Min(transform.position.y + speed * speedMultiplier * direction * Time.deltaTime, maxYPos);
+        newYPos = Mathf.Max(newYPos, minYPos + floorStopDistance);
 
         transform.position = new Vector2(transform.position.x, newYPos);
     }

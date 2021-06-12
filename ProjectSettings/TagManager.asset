@@ -41,6 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ext_BG
+    uniqueID: 2876936467
+    locked: 0
+  - name: Int_BG
+    uniqueID: 3205188583
+    locked: 0
+  - name: FG
+    uniqueID: 4009182389
+    locked: 0
   - name: Characters
     uniqueID: 3858519107
+    locked: 0
+  - name: Unlit
+    uniqueID: 254929527
     locked: 0
