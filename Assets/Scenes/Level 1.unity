@@ -1936,14 +1936,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 519420033, guid: ba028734a35f5a341bfbfa192885cdf9, type: 3}
-      propertyPath: maxSize
-      value: 6.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 519420033, guid: ba028734a35f5a341bfbfa192885cdf9, type: 3}
-      propertyPath: minSize
-      value: 6.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 519420033, guid: ba028734a35f5a341bfbfa192885cdf9, type: 3}
       propertyPath: otherTransform
       value: 
       objectReference: {fileID: 628085500}
@@ -1999,14 +1991,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera Top
       objectReference: {fileID: 0}
-    - target: {fileID: 497316216840621006, guid: ba028734a35f5a341bfbfa192885cdf9, type: 3}
-      propertyPath: orthographic size
-      value: 6.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 497316216840621007, guid: ba028734a35f5a341bfbfa192885cdf9, type: 3}
-      propertyPath: offset
-      value: 2.67
-      objectReference: {fileID: 0}
     - target: {fileID: 497316216840621007, guid: ba028734a35f5a341bfbfa192885cdf9, type: 3}
       propertyPath: parentToFollow
       value: 
@@ -2020,14 +2004,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2943277728456251456, guid: 433e045535f454f4ea7040c622375fff, type: 3}
-      propertyPath: maxSize
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2943277728456251456, guid: 433e045535f454f4ea7040c622375fff, type: 3}
-      propertyPath: minSize
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 2943277728456251460, guid: 433e045535f454f4ea7040c622375fff, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2071,18 +2047,6 @@ PrefabInstance:
     - target: {fileID: 2943277728456251460, guid: 433e045535f454f4ea7040c622375fff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2943277728456251462, guid: 433e045535f454f4ea7040c622375fff, type: 3}
-      propertyPath: m_AllowMSAA
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2943277728456251462, guid: 433e045535f454f4ea7040c622375fff, type: 3}
-      propertyPath: orthographic size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2943277728456251462, guid: 433e045535f454f4ea7040c622375fff, type: 3}
-      propertyPath: m_NormalizedViewPortRect.height
-      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2943277728456251463, guid: 433e045535f454f4ea7040c622375fff, type: 3}
       propertyPath: Thief

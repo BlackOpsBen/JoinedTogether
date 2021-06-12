@@ -420,12 +420,12 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.7
+    height: 0.6
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 4
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -435,7 +435,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -475,8 +475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb82cb8e78c4ff4bb032419b5ff1384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSize: 3
-  maxSize: 5
+  minSize: 4
+  maxSize: 4
   startZoomOutThresholdDistance: -7
   zoomOutSpeed: 20
   zoomInSpeed: 4
