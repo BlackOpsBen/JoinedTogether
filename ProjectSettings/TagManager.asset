@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - CamA
+  - CamB
   - 
   - 
   - 
@@ -43,6 +43,12 @@ TagManager:
     locked: 0
   - name: Ext_BG
     uniqueID: 2876936467
+    locked: 0
+  - name: CamB
+    uniqueID: 1452454657
+    locked: 0
+  - name: CamA
+    uniqueID: 1428752217
     locked: 0
   - name: Int_BG
     uniqueID: 3205188583
