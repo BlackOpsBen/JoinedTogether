@@ -8,8 +8,8 @@ public class LevelBuilder : MonoBehaviour
     [SerializeField] int pieceHeight = 3;
     [SerializeField] int minBasicsFirst = 3;
 
-    [SerializeField] GameObject basicPiece;
-    [SerializeField] GameObject[] modularPieces;
+    [SerializeField] GameObject[] basicPieces;
+    [SerializeField] GameObject[] specialPieces;
     [SerializeField] GameObject floorPiece;
 
     public static LevelBuilder Instance;
@@ -38,15 +38,17 @@ public class LevelBuilder : MonoBehaviour
             else if (i < minBasicsFirst)
             {
                 Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - pieceHeight * i);
-                Instantiate(basicPiece, spawnPosition, Quaternion.identity, transform);
+
+                int rand = UnityEngine.Random.Range(0, basicPieces.Length);
+                Instantiate(basicPieces[rand], spawnPosition, Quaternion.identity, transform);
             }
             else
             {
                 Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - pieceHeight * i);
 
-                int rand = UnityEngine.Random.Range(0, modularPieces.Length);
+                int rand = UnityEngine.Random.Range(0, specialPieces.Length);
 
-                Instantiate(modularPieces[rand], spawnPosition, Quaternion.identity, transform);
+                Instantiate(specialPieces[rand], spawnPosition, Quaternion.identity, transform);
             }
         }
     }

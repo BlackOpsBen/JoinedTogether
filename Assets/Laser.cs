@@ -8,6 +8,7 @@ public class Laser : MonoBehaviour
     [SerializeField] float onTime = 1f;
     [SerializeField] float offTime = 2f;
     [SerializeField] float offset = 0f;
+    [SerializeField] bool randomInitialOffset = false;
 
     [SerializeField] GameObject laserObject;
 
@@ -17,7 +18,12 @@ public class Laser : MonoBehaviour
 
     private void Start()
     {
-        timer += offset;
+        if (randomInitialOffset)
+        {
+            offset += UnityEngine.Random.Range(0f, 1f);
+        }
+
+        timer -= offset;
     }
 
     private void Update()
