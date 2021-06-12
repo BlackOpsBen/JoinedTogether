@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     private float alertLevel = 0f;
 
+    private float maxAlertLevel = 100f;
+
     public float GUARD_ALERT_RATE = 1f;
     public float LASER_INITIAL_ALERT_RATE = 3f;
     public float LASER_CONTINUAL_ALERT_RATE = 1f;
@@ -39,9 +41,14 @@ public class GameManager : MonoBehaviour
         hasObjective = value;
     }
 
+    public float GetAlertLevelPercentage()
+    {
+        return alertLevel / maxAlertLevel;
+    }
+
     public void AdjustAlertLevel(float amount)
     {
         alertLevel += amount * alertRateMultiplier;
-        alertLevel = Mathf.Clamp(alertLevel, 0f, 100f);
+        alertLevel = Mathf.Clamp(alertLevel, 0f, maxAlertLevel);
     }
 }
