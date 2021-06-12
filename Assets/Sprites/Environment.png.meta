@@ -43,7 +43,7 @@ TextureImporter:
     second: Environment_12
   - first:
       213: 1648749068166103451
-    second: Environment_13
+    second: Laptop
   - first:
       213: -2213567507432036408
     second: Environment_14
@@ -592,7 +592,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Environment_13
+      name: Laptop
       rect:
         serializedVersion: 2
         x: 80

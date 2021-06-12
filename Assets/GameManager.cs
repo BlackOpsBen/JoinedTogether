@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,6 +50,17 @@ public class GameManager : MonoBehaviour
     public void AdjustAlertLevel(float amount)
     {
         alertLevel += amount * alertRateMultiplier;
+
+        if (alertLevel > maxAlertLevel)
+        {
+            GameOver();
+        }
+
         alertLevel = Mathf.Clamp(alertLevel, 0f, maxAlertLevel);
+    }
+
+    private void GameOver()
+    {
+        Debug.LogWarning("You lose!");
     }
 }

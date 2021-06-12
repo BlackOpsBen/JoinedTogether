@@ -11,11 +11,28 @@ public class ZoomCamera : MonoBehaviour
     [SerializeField] float zoomOutSpeed = 2f;
     [SerializeField] float zoomInSpeed = 4f;
 
+    [SerializeField] bool useOtherTransform;
+    [SerializeField] Transform otherTransform;
+
+    private Transform refTransform;
+
+    private void Start()
+    {
+        if (useOtherTransform)
+        {
+            refTransform = otherTransform;
+        }
+        else
+        {
+            refTransform = transform;
+        }
+    }
+
     private void Update()
     {
         float currentSize = GetComponent<Camera>().orthographicSize;
 
-        if (transform.position.y < startZoomOutThresholdDistance)
+        if (refTransform.position.y < startZoomOutThresholdDistance)
         {
             float t = Time.deltaTime;
             t = t * t * (3f - 2f * t);
