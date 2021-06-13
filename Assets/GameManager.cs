@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
 
     private float maxAlertLevel = 100f;
 
+    private bool alreadyWarned = false;
+    private float warnThreshold = 70f;
+    private float resetWarnThreshold = 50f;
+
     [Header("Alert Settings")]
     public float GUARD_ALERT_RATE = 1f;
     public float LASER_INITIAL_ALERT_RATE = 3f;
@@ -79,6 +83,17 @@ public class GameManager : MonoBehaviour
         }
 
         alertLevel = Mathf.Clamp(alertLevel, 0f, maxAlertLevel);
+
+        if (alertLevel > warnThreshold && !alreadyWarned)
+        {
+            AudioManager.Instance.PlayDialogOverOthers(AudioManager.CHARACTER_HACKER, AudioManager.CATEGORY_HACKER_WARNING);
+            alreadyWarned = true;
+        }
+
+        if (alertLevel < resetWarnThreshold)
+        {
+            alreadyWarned = false;
+        }
     }
 
     public void StartGame()
