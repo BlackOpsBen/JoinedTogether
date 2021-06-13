@@ -7,6 +7,8 @@ public class Hacker : MonoBehaviour
 {
     private AnimationSwitcher animSwitcher;
 
+    private bool hasStarted = false;
+
     private void Awake()
     {
         animSwitcher = GameObject.FindGameObjectWithTag("Hacker").GetComponent<AnimationSwitcher>();
@@ -25,12 +27,20 @@ public class Hacker : MonoBehaviour
         AudioManager.Instance.StopSFXLoop("Hacking");
 
         animSwitcher.SetConditionA(false);
+
+        hasStarted = false;
     }
 
     private void Hack()
     {
         GameManager.Instance.AdjustAlertLevel(GameManager.Instance.HACK_ALERT_RATE * Time.deltaTime);
-        // TODO implement hacking feedback/fx
+
+        if (!hasStarted)
+        {
+            AudioManager.Instance.PlayDialog(AudioManager.CHARACTER_HACKER, AudioManager.CATEGORY_HACKER_HACKING, true);
+            hasStarted = true;
+        }
+
         AudioManager.Instance.PlaySFXLoop("Hacking");
 
         animSwitcher.SetConditionA(true);

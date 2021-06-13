@@ -51,13 +51,13 @@ MonoBehaviour:
     source: {fileID: 0}
   musicA:
     name: No Drums
-    clip: {fileID: 8300000, guid: a763afeb1962ae446b9d4a8bc95f2fbb, type: 3}
+    clip: {fileID: 8300000, guid: 8e492119de0773a429887af486977e36, type: 3}
     volume: 0.3
     pitch: 1
     source: {fileID: 0}
   musicB:
     name: With Drums
-    clip: {fileID: 8300000, guid: 5b3ff2c18cab56249bd0d618f0c8a4e7, type: 3}
+    clip: {fileID: 8300000, guid: 2ec6357be2f728247828e8bc0b922636, type: 3}
     volume: 0.3
     pitch: 1
     source: {fileID: 0}

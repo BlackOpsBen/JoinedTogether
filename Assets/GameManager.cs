@@ -97,12 +97,14 @@ public class GameManager : MonoBehaviour
     public void WinLevel()
     {
         winScreen.SetActive(true);
+        PersistentSceneManager.Instance.IncreaseLevel();
         Invoke("Restart", 1f);
     }
 
     private void LoseLevel()
     {
         loseScreen.SetActive(true);
+        PersistentSceneManager.Instance.IncreaseFailures();
         Invoke("Restart", 1f);
     }
 

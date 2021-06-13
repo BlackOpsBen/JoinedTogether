@@ -8,6 +8,9 @@ public class PersistentSceneManager : MonoBehaviour
 
     private bool hasStarted = false;
 
+    private int numFailures = 0;
+    private int currentLevel = 1;
+
     private void Awake()
     {
         if (Instance != null)
@@ -30,5 +33,15 @@ public class PersistentSceneManager : MonoBehaviour
     public bool GetHasStarted()
     {
         return hasStarted;
+    }
+
+    public void IncreaseFailures()
+    {
+        numFailures++;
+    }
+
+    public void IncreaseLevel()
+    {
+        currentLevel++;
     }
 }

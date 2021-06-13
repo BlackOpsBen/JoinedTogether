@@ -295,7 +295,54 @@ MonoBehaviour:
     - name: Hacking
       options:
       - name: 
-        clip: {fileID: 8300000, guid: 51975b13c266d9349a1461f5d5b0843d, type: 3}
+        clip: {fileID: 8300000, guid: fae1e830db13a0c45b8c1b96e7a80032, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: a73637c91313cb54ca446fdd4a61d29a, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: a4c9f28ec6141b84083ab7fefda75b48, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 658bf6a0c2271e140ba2b39f3bb7d693, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: d558ba3635941194d9cd9c853f245014, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 7834e5e30fc83614bafdca2e613be774, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+    - name: Bad News
+      options:
+      - name: 
+        clip: {fileID: 8300000, guid: 0333b410726c3b44d96f2c1060c3c9f8, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 41300ffd4808bb946ab8dd7ba636e953, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 176f4ee7ba48b534196cc2111c9c5ae4, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: c9a886111cfd0cf48963c7862914d658, type: 3}
         volume: 0.5
         pitch: 1
         source: {fileID: 0}
