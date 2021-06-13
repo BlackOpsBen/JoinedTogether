@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class Hacker : MonoBehaviour
 {
+    private AnimationSwitcher animSwitcher;
+
+    private void Awake()
+    {
+        animSwitcher = GameObject.FindGameObjectWithTag("Hacker").GetComponent<AnimationSwitcher>();
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.GetComponent<CharacterMovement>())
@@ -16,6 +23,8 @@ public class Hacker : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         AudioManager.Instance.StopSFXLoop("Hacking");
+
+        animSwitcher.ToggleAnimation(false);
     }
 
     private void Hack()
@@ -23,5 +32,7 @@ public class Hacker : MonoBehaviour
         GameManager.Instance.AdjustAlertLevel(GameManager.Instance.HACK_ALERT_RATE * Time.deltaTime);
         // TODO implement hacking feedback/fx
         AudioManager.Instance.PlaySFXLoop("Hacking");
+
+        animSwitcher.ToggleAnimation(true);
     }
 }

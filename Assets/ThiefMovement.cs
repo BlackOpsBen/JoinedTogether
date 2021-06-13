@@ -25,8 +25,14 @@ public class ThiefMovement : MonoBehaviour
     private bool hasSpokenDirection = false;
     private int prevDirection = 0;
 
+    private AnimationSwitcher hackerAnimSwitcher;
+    private AnimationSwitcher cleanerAnimSwitcher;
+
     private void Awake()
     {
+        hackerAnimSwitcher = GameObject.FindGameObjectWithTag("Hacker").GetComponent<AnimationSwitcher>();
+        cleanerAnimSwitcher = GameObject.FindGameObjectWithTag("Cleaner").GetComponent<AnimationSwitcher>();
+
         pulleyLight = FindObjectOfType<PulleyLightAndSound>();
     }
 
@@ -40,6 +46,9 @@ public class ThiefMovement : MonoBehaviour
     {
         CheckRopeHandles();
         Move(GetMoveDirection());
+
+        hackerAnimSwitcher.ToggleAnimation(isLeftHeld);
+        cleanerAnimSwitcher.ToggleAnimation(isRightHeld);
     }
 
     private void CheckRopeHandles()

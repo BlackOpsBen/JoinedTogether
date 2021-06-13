@@ -14,6 +14,13 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] Transform taskDestination;
     private Transform currentDestination;
 
+    private SpriteRenderer sr;
+
+    private void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
     private void Start()
     {
         currentSpeed = speedToTask;
@@ -54,6 +61,8 @@ public class CharacterMovement : MonoBehaviour
         {
             currentDestination = taskDestination;
         }
+
+        sr.flipX = value;
     }
 
     public float GetDistanceToRope()
