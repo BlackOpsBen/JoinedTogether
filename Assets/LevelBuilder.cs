@@ -30,12 +30,12 @@ public class LevelBuilder : MonoBehaviour
         {
             Instance = this;
         }
-
-        depth = PersistentSceneManager.Instance.GetCurrentLevel() + minDepth;
     }
 
     private void Start()
     {
+        depth = PersistentSceneManager.Instance.GetCurrentLevel() + minDepth;
+
         for (int i = 0; i < depth; i++)
         {
             if (i == depth - 1)

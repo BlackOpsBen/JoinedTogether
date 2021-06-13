@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PersistentSceneManager : MonoBehaviour
 {
@@ -11,11 +12,16 @@ public class PersistentSceneManager : MonoBehaviour
     private int numFailures = 0;
     private int currentLevel = 1;
 
+    [SerializeField] TextMeshProUGUI levelLabel;
+    [SerializeField] TextMeshProUGUI failureLabel;
+    [SerializeField] string levelPrefix = "Level: ";
+    [SerializeField] string failurePrefix = "Failures: ";
+
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
         else
         {
@@ -38,15 +44,23 @@ public class PersistentSceneManager : MonoBehaviour
     public void IncreaseFailures()
     {
         numFailures++;
+        UpdateUI();
     }
 
     public void IncreaseLevel()
     {
         currentLevel++;
+        UpdateUI();
     }
 
     public int GetCurrentLevel()
     {
         return currentLevel;
+    }
+
+    private void UpdateUI()
+    {
+        levelLabel.text = levelPrefix + currentLevel.ToString();
+        failureLabel.text = failurePrefix + numFailures.ToString();
     }
 }

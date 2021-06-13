@@ -66,6 +66,17 @@
                 },
                 {
                     "name": "",
+                    "id": "375b3fa0-abdf-4e6b-808b-513fc2701546",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Grab Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9d492ac0-ce66-49d0-8a6c-a9b4c24a5942",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
@@ -90,6 +101,17 @@
                     "name": "",
                     "id": "1879d0a9-bdb7-4caa-a30a-7f63da11364a",
                     "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Grab Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd1d978d-04c3-460e-9004-16edefb697eb",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",

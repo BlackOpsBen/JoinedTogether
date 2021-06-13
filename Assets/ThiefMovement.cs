@@ -39,11 +39,12 @@ public class ThiefMovement : MonoBehaviour
     private void Start()
     {
         levelBuilder = FindObjectOfType<LevelBuilder>();
-        minYPos = levelBuilder.GetFloorYPos();
     }
 
     private void Update()
     {
+        minYPos = levelBuilder.GetFloorYPos();
+
         if (GameManager.Instance.GetIsPlaying())
         {
             CheckRopeHandles();

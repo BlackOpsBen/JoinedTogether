@@ -30,12 +30,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject splashUI;
     [SerializeField] CamerasToPos camsParent;
     [SerializeField] Animator hackerAnimController;
+    [SerializeField] GameObject instructionsUI;
 
     [Header("Win/Lose Handling")]
     [SerializeField] GameObject winScreen;
     [SerializeField] GameObject loseScreen;
 
     private bool isPlaying = false;
+
+    private bool hasLostLevel = false;
 
     private void Awake()
     {
@@ -79,7 +82,11 @@ public class GameManager : MonoBehaviour
 
         if (alertLevel > maxAlertLevel)
         {
-            LoseLevel();
+            if (!hasLostLevel)
+            {
+                LoseLevel();
+                hasLostLevel = true;
+            }
         }
 
         alertLevel = Mathf.Clamp(alertLevel, 0f, maxAlertLevel);
@@ -107,6 +114,8 @@ public class GameManager : MonoBehaviour
         hackerAnimController.SetTrigger("startGame");
 
         PersistentSceneManager.Instance.SetHasStarted(true);
+
+        instructionsUI.SetActive(true);
     }
 
     public void WinLevel()
