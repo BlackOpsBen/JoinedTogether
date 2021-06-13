@@ -15,6 +15,8 @@ public class ThiefMovement : MonoBehaviour
     [SerializeField] float floorStopDistance = 1f;
     private float minYPos = float.MaxValue;
 
+    private PulleyLightAndSound pulleyLight;
+
     bool isLeftHeld = false;
     bool isRightHeld = false;
 
@@ -22,6 +24,11 @@ public class ThiefMovement : MonoBehaviour
 
     private bool hasSpokenDirection = false;
     private int prevDirection = 0;
+
+    private void Awake()
+    {
+        pulleyLight = FindObjectOfType<PulleyLightAndSound>();
+    }
 
     private void Start()
     {
@@ -95,5 +102,7 @@ public class ThiefMovement : MonoBehaviour
         newYPos = Mathf.Max(newYPos, minYPos + floorStopDistance);
 
         transform.position = new Vector2(transform.position.x, newYPos);
+
+        pulleyLight.SetLight(direction);
     }
 }

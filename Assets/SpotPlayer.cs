@@ -33,7 +33,6 @@ public class SpotPlayer : MonoBehaviour
 
     private void RaiseAlarm()
     {
-        Debug.LogWarning("Guard spots you!");
         // TODO implement spotting
         GameManager.Instance.AdjustAlertLevel(GameManager.Instance.GUARD_ALERT_RATE * Time.deltaTime);
     }
