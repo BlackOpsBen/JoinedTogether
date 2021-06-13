@@ -9,6 +9,8 @@ public class Hacker : MonoBehaviour
 
     private bool hasStarted = false;
 
+    private bool isHacking = false;
+
     private void Awake()
     {
         animSwitcher = GameObject.FindGameObjectWithTag("Hacker").GetComponent<AnimationSwitcher>();
@@ -19,6 +21,7 @@ public class Hacker : MonoBehaviour
         if (collision.GetComponent<CharacterMovement>())
         {
             Hack();
+            isHacking = true;
         }
     }
 
@@ -29,6 +32,8 @@ public class Hacker : MonoBehaviour
         animSwitcher.SetConditionA(false);
 
         hasStarted = false;
+
+        isHacking = false;
     }
 
     private void Hack()
@@ -44,5 +49,10 @@ public class Hacker : MonoBehaviour
         AudioManager.Instance.PlaySFXLoop("Hacking");
 
         animSwitcher.SetConditionA(true);
+    }
+
+    public bool GetIsHacking()
+    {
+        return isHacking;
     }
 }
