@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
 
     public void WinLevel()
     {
+        isPlaying = false;
         winScreen.SetActive(true);
         PersistentSceneManager.Instance.IncreaseLevel();
         Invoke("Restart", 1f);

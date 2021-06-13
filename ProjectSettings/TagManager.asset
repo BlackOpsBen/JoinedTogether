@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hacker
   - Cleaner
+  - PersistentSceneManager
   layers:
   - Default
   - TransparentFX

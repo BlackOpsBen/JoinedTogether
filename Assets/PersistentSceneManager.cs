@@ -29,6 +29,8 @@ public class PersistentSceneManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this);
+
+        UpdateUI();
     }
 
     public void SetHasStarted(bool value)
