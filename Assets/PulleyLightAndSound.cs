@@ -13,7 +13,7 @@ public class PulleyLightAndSound : MonoBehaviour
 
     [SerializeField] SpriteRenderer sr;
 
-    [SerializeField] Light2D light;
+    [SerializeField] Light2D mLight;
 
     private List<Sprite> lights = new List<Sprite>();
 
@@ -50,7 +50,7 @@ public class PulleyLightAndSound : MonoBehaviour
 
     private void ToggleSprites(int index)
     {
-        light.color = respectiveLightColors[index];
+        mLight.color = respectiveLightColors[index];
         sr.sprite = lights[index];
     }
 }

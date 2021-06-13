@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onTime: 2
-  offTime: 2
-  offset: 0.75
+  offTime: 2.5
+  offset: 0.9
   randomInitialOffset: 0
   laserObject: {fileID: 8920735120673781726}
 --- !u!114 &7312719959366755923
@@ -86,8 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onTime: 2
-  offTime: 2
-  offset: 0.5
+  offTime: 2.5
+  offset: 0.6
   randomInitialOffset: 0
   laserObject: {fileID: 1124656325048641321}
 --- !u!114 &1511982939207425518
@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onTime: 2
-  offTime: 2
-  offset: 0.25
+  offTime: 2.5
+  offset: 0.3
   randomInitialOffset: 0
   laserObject: {fileID: 4491031406990918848}
 --- !u!1 &1100423796758375653
@@ -1212,7 +1212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1498884595009294540, guid: 994a710703188a5408ec267c98138979, type: 3}
       propertyPath: m_InstanceId
-      value: -537008
+      value: -804652
       objectReference: {fileID: 0}
     - target: {fileID: 2106115582109297752, guid: 994a710703188a5408ec267c98138979, type: 3}
       propertyPath: m_Mesh
@@ -1220,7 +1220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2106115582109297752, guid: 994a710703188a5408ec267c98138979, type: 3}
       propertyPath: m_InstanceId
-      value: -537002
+      value: -804646
       objectReference: {fileID: 0}
     - target: {fileID: 5510520716372148570, guid: 994a710703188a5408ec267c98138979, type: 3}
       propertyPath: m_RootOrder

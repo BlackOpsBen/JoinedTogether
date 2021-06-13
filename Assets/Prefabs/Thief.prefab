@@ -116,7 +116,7 @@ MonoBehaviour:
   - {x: -1.2990756, y: 0.09649342, z: 0}
   m_ShapePathHash: 576216932
   m_Mesh: {fileID: 0}
-  m_InstanceId: -512086
+  m_InstanceId: 113878
 --- !u!1 &1217275402029762484
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +202,6 @@ GameObject:
   - component: {fileID: 2558592482970841826}
   - component: {fileID: 8295444060061674209}
   - component: {fileID: 7325228043544108138}
-  - component: {fileID: 516954653}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -261,7 +260,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.28287935, y: 0.1675893}
+  m_Offset: {x: -0.28287935, y: 0.20894665}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -272,7 +271,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5979853, y: 1.0944641}
+  m_Size: {x: 2.5979853, y: 0.71397555}
   m_EdgeRadius: 0
 --- !u!50 &8295444060061674209
 Rigidbody2D:
@@ -311,39 +310,6 @@ MonoBehaviour:
   ySize: 2
   ropePerMod: 3
   ropePrefab: {fileID: 8625586515908365297, guid: 19a90fefaebc471478bab1f2757f4100, type: 3}
---- !u!114 &516954653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3347937305425979953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_HasRenderer: 0
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 1
-  m_ApplyToSortingLayers: 000000004354fce5
-  m_ShapePath:
-  - {x: -0.78120935, y: -0.15765595, z: 0}
-  - {x: -0.3986583, y: -0.2748748, z: 0}
-  - {x: -0.081411846, y: -0.07796323, z: 0}
-  - {x: 0.31241137, y: -0.001386404, z: 0}
-  - {x: 0.70623463, y: 0.3158599, z: 0}
-  - {x: 0.6389954, y: 0.4002601, z: 0}
-  - {x: 0.08268117, y: 0.3814972, z: 0}
-  - {x: -0.21428835, y: 0.61711645, z: 0}
-  - {x: -0.5189932, y: 0.5674692, z: 0}
-  - {x: -0.78154206, y: 0.38149697, z: 0}
-  - {x: -0.85778606, y: 0.1248374, z: 0}
-  m_ShapePathHash: 862764886
-  m_Mesh: {fileID: 0}
-  m_InstanceId: 19532
 --- !u!1 &8622343474386369806
 GameObject:
   m_ObjectHideFlags: 0

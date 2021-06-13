@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
 {
     public static int CHARACTER_THIEF = 0;
     public static int CHARACTER_CLEANER = 1;
+    public static int CHARACTER_HACKER = 2;
+    public static int CHARACTER_GUARD = 3;
 
     public static int CATEGORY_THIEF_UP = 0;
     public static int CATEGORY_THIEF_DOWN = 1;
@@ -16,10 +18,21 @@ public class AudioManager : MonoBehaviour
     public static int CATEGORY_CLEANER_GO_FIGHT = 0;
     public static int CATEGORY_CLEANER_KILL = 1;
 
+    public static int CATEGORY_HACKER_HACKING = 0;
+    public static int CATEGORY_HACKER_WARNING = 0;
+
+    public static int CATEGORY_GUARD_SPOT = 0;
+    public static int CATEGORY_GUARD_DEAD = 1;
+
+    public static int SFX_GROUP_PUNCHES = 0;
+
     public static AudioManager Instance { get; private set; }
 
     [Header("SFX")]
     public Sound[] SFX;
+
+    [Header("SFX Groups")]
+    public SoundCategory[] sfxGroups;
 
     [Header("Characters")]
     public SoundGroup[] characterSoundGroups;
@@ -43,9 +56,9 @@ public class AudioManager : MonoBehaviour
         CreateAudioSources(ref reminders);
         for (int i = 0; i < characterSoundGroups.Length; i++)
         {
-            for (int j = 0; j < characterSoundGroups[i].dialogCategories.Length; j++)
+            for (int j = 0; j < characterSoundGroups[i].soundCategories.Length; j++)
             {
-                for (int k = 0; k < characterSoundGroups[i].dialogCategories[j].dialogsOptions.Length; k++)
+                for (int k = 0; k < characterSoundGroups[i].soundCategories[j].options.Length; k++)
                 {
 
                 }
@@ -53,10 +66,14 @@ public class AudioManager : MonoBehaviour
         }
         foreach (SoundGroup sg in characterSoundGroups)
         {
-            foreach (DialogCategory dc in sg.dialogCategories)
+            foreach (SoundCategory dc in sg.soundCategories)
             {
-                CreateAudioSources(ref dc.dialogsOptions);
+                CreateAudioSources(ref dc.options);
             }
+        }
+        foreach (SoundCategory sc in sfxGroups)
+        {
+            CreateAudioSources(ref sc.options);
         }
     }
 
@@ -103,6 +120,13 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    public void PlaySFXGroup(int groupIndex)
+    {
+        int rand = UnityEngine.Random.Range(0, sfxGroups[groupIndex].options.Length);
+
+        sfxGroups[groupIndex].options[rand].source.Play();
+    }
+
     public void PlaySFXLoop(string name)
     {
         Sound s = Array.Find(SFX, sound => sound.name == name);
@@ -122,9 +146,9 @@ public class AudioManager : MonoBehaviour
 
     public void PlayDialog(int CHARACTER_INDEX, int DIALOG_CATEGORY, bool oneAtATime)
     {
-        int maxOption = characterSoundGroups[CHARACTER_INDEX].dialogCategories[DIALOG_CATEGORY].dialogsOptions.Length;
+        int maxOption = characterSoundGroups[CHARACTER_INDEX].soundCategories[DIALOG_CATEGORY].options.Length;
         int selectedOption = UnityEngine.Random.Range(0, maxOption);
-        Sound s = characterSoundGroups[CHARACTER_INDEX].dialogCategories[DIALOG_CATEGORY].dialogsOptions[selectedOption];
+        Sound s = characterSoundGroups[CHARACTER_INDEX].soundCategories[DIALOG_CATEGORY].options[selectedOption];
 
         if (oneAtATime)
         {
@@ -136,6 +160,24 @@ public class AudioManager : MonoBehaviour
             someoneIsSpeaking = true;
             dialogLimiter.SetCanSpeak(CHARACTER_INDEX, false);
         }
+
+        s.source.Play();
+    }
+
+    // Plays over others, and does not require others to wait for it either, but still limits self to 1 at a time
+    public void PlayDialogOverOthers(int CHARACTER_INDEX, int DIALOG_CATEGORY)
+    {
+        int maxOption = characterSoundGroups[CHARACTER_INDEX].soundCategories[DIALOG_CATEGORY].options.Length;
+        int selectedOption = UnityEngine.Random.Range(0, maxOption);
+        Sound s = characterSoundGroups[CHARACTER_INDEX].soundCategories[DIALOG_CATEGORY].options[selectedOption];
+
+        if (!dialogLimiter.GetCanSpeak(CHARACTER_INDEX))
+        {
+            return;
+        }
+
+        speakingDuration = s.source.clip.length;
+        dialogLimiter.SetCanSpeak(CHARACTER_INDEX, false);
 
         s.source.Play();
     }
@@ -162,12 +204,12 @@ public class AudioManager : MonoBehaviour
 public class SoundGroup
 {
     public string name;
-    public DialogCategory[] dialogCategories;
+    public SoundCategory[] soundCategories;
 }
 
 [System.Serializable]
-public class DialogCategory
+public class SoundCategory
 {
     public string name;
-    public Sound[] dialogsOptions;
+    public Sound[] options;
 }
