@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedToTask: 1
-  speedToRope: 2
+  speedToRope: 3
   speedMultiplier: 3
   ropeDestination: {fileID: 0}
   taskDestination: {fileID: 0}
@@ -177,4 +177,4 @@ MonoBehaviour:
   - {x: -0.7426281, y: -1.0576824, z: 0}
   m_ShapePathHash: -1365666327
   m_Mesh: {fileID: 0}
-  m_InstanceId: 85294
+  m_InstanceId: -1320
