@@ -24,7 +24,7 @@ public class Hacker : MonoBehaviour
     {
         AudioManager.Instance.StopSFXLoop("Hacking");
 
-        animSwitcher.ToggleAnimation(false);
+        animSwitcher.SetConditionA(false);
     }
 
     private void Hack()
@@ -33,6 +33,6 @@ public class Hacker : MonoBehaviour
         // TODO implement hacking feedback/fx
         AudioManager.Instance.PlaySFXLoop("Hacking");
 
-        animSwitcher.ToggleAnimation(true);
+        animSwitcher.SetConditionA(true);
     }
 }

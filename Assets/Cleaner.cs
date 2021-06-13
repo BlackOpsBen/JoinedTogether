@@ -5,15 +5,28 @@ using UnityEngine;
 public class Cleaner : MonoBehaviour
 {
     [SerializeField] float killSoundSpacing = .2f;
+    [SerializeField] float killDelay = .1f;
+
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Patrol>())
         {
-            Destroy(collision.gameObject);
-            AudioManager.Instance.PlaySFXGroup(AudioManager.SFX_GROUP_PUNCHES);
-            Invoke("PlayGuardSound", killSoundSpacing);
+            animator.SetTrigger("doPunch");
+            Destroy(collision.gameObject, killDelay);
         }
+    }
+
+    public void OnAnimationEvent()
+    {
+        AudioManager.Instance.PlaySFXGroup(AudioManager.SFX_GROUP_PUNCHES);
+        Invoke("PlayGuardSound", killSoundSpacing);
     }
 
     private void PlayGuardSound()
