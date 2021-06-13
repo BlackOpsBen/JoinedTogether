@@ -53,6 +53,7 @@ public class Hacker : MonoBehaviour
 
     public bool GetIsHacking()
     {
+        Debug.LogWarning("Hacker: " + isHacking.ToString());
         return isHacking;
     }
 }

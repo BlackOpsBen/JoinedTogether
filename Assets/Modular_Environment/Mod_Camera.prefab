@@ -58,7 +58,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100423795140963493}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dff7d383fcbe20946a83a110ded561d0, type: 3}
   m_Name: 
@@ -70,8 +70,9 @@ MonoBehaviour:
   - {fileID: 3566684741382763687}
   hackIcon: {fileID: 6903992662299493599}
   hackReminder: {fileID: 1867382154637445524}
-  thiefDistanceMax: 5
+  thiefDistanceMax: 3
   cameraYPosMarker: {fileID: 1881193853404448752}
+  hackTime: 2
 --- !u!1 &1100423796758375653
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1498884595009294540, guid: 994a710703188a5408ec267c98138979, type: 3}
       propertyPath: m_InstanceId
-      value: -292452
+      value: -193514
       objectReference: {fileID: 0}
     - target: {fileID: 2106115582109297752, guid: 994a710703188a5408ec267c98138979, type: 3}
       propertyPath: m_Mesh
@@ -997,7 +998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2106115582109297752, guid: 994a710703188a5408ec267c98138979, type: 3}
       propertyPath: m_InstanceId
-      value: -292446
+      value: -193508
       objectReference: {fileID: 0}
     - target: {fileID: 5510520716372148570, guid: 994a710703188a5408ec267c98138979, type: 3}
       propertyPath: m_RootOrder

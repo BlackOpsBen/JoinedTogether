@@ -15,7 +15,7 @@ public class DisableCamera : MonoBehaviour
     private Hacker hacker;
 
     private float timer = 0f;
-    private float hackTime = 1f;
+    [SerializeField] private float hackTime = 2f;
 
     private bool isDisabled = false;
 
@@ -36,6 +36,7 @@ public class DisableCamera : MonoBehaviour
                 timer += Time.deltaTime;
 
                 hackIcon.SetActive(true);
+                hackReminder.SetActive(false);
             }
             else
             {
@@ -58,6 +59,7 @@ public class DisableCamera : MonoBehaviour
             lightObjects[i].SetActive(false);
         }
         hackIcon.SetActive(false);
+        hackReminder.SetActive(false);
 
         isDisabled = true;
     }
