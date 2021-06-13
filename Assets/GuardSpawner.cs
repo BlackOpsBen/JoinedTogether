@@ -25,13 +25,16 @@ public class GuardSpawner : MonoBehaviour
 
     private void Update()
     {
-        timer += Time.deltaTime;
-
-        if (timer > currentInterval)
+        if (GameManager.Instance.GetIsPlaying())
         {
-            Spawn();
-            timer = 0f;
-            currentInterval = GetRandomInterval();
+            timer += Time.deltaTime;
+
+            if (timer > currentInterval)
+            {
+                Spawn();
+                timer = 0f;
+                currentInterval = GetRandomInterval();
+            }
         }
     }
 

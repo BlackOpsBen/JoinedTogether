@@ -29,8 +29,11 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        UpdateSpeed();
-        Move();
+        if (GameManager.Instance.GetIsPlaying())
+        {
+            UpdateSpeed();
+            Move();
+        }
     }
 
     private void UpdateSpeed()

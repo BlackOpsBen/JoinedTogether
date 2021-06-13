@@ -44,11 +44,14 @@ public class ThiefMovement : MonoBehaviour
 
     private void Update()
     {
-        CheckRopeHandles();
-        Move(GetMoveDirection());
+        if (GameManager.Instance.GetIsPlaying())
+        {
+            CheckRopeHandles();
+            Move(GetMoveDirection());
 
-        hackerAnimSwitcher.SetConditionB(isLeftHeld);
-        cleanerAnimSwitcher.SetConditionB(isRightHeld);
+            hackerAnimSwitcher.SetConditionB(isLeftHeld);
+            cleanerAnimSwitcher.SetConditionB(isRightHeld);
+        }
     }
 
     private void CheckRopeHandles()

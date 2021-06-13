@@ -9,8 +9,12 @@ public class FollowThief : MonoBehaviour
 
     private void Update()
     {
-        Vector3 lerpPos = Vector3.Lerp(transform.position, Thief.position, Time.deltaTime * lerpSpeed);
-        Vector3 newPos = new Vector3(lerpPos.x, lerpPos.y, transform.position.z);
-        transform.position = newPos;
+        if (GameManager.Instance.GetIsPlaying())
+        {
+            //Vector3 lerpPos = Vector3.Lerp(transform.position, Thief.position, Time.deltaTime * lerpSpeed);
+            //Vector3 newPos = new Vector3(lerpPos.x, lerpPos.y, transform.position.z);
+            Vector3 newPos = new Vector3(Thief.position.x, Thief.position.y, transform.position.z);
+            transform.position = newPos;
+        }
     }
 }

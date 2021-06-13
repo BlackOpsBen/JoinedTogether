@@ -11,7 +11,7 @@ public class Escape : MonoBehaviour
             if (GameManager.Instance.GetHasObjective())
             {
                 // TODO Victory stuff
-                Debug.LogWarning("You win!");
+                GameManager.Instance.WinLevel();
             }
             else
             {

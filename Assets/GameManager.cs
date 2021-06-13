@@ -13,12 +13,24 @@ public class GameManager : MonoBehaviour
 
     private float maxAlertLevel = 100f;
 
+    [Header("Alert Settings")]
     public float GUARD_ALERT_RATE = 1f;
     public float LASER_INITIAL_ALERT_RATE = 3f;
     public float LASER_CONTINUAL_ALERT_RATE = 1f;
     public float CAMERA_ALERT_RATE = 2f;
     public float HACK_ALERT_RATE = -1f;
     [SerializeField] float alertRateMultiplier = 1f;
+
+    [Header("Game Setup Handling")]
+    [SerializeField] GameObject splashUI;
+    [SerializeField] CamerasToPos camsParent;
+    [SerializeField] Animator hackerAnimController;
+
+    [Header("Win/Lose Handling")]
+    [SerializeField] GameObject winScreen;
+    [SerializeField] GameObject loseScreen;
+
+    private bool isPlaying = false;
 
     private void Awake()
     {
@@ -57,14 +69,35 @@ public class GameManager : MonoBehaviour
 
         if (alertLevel > maxAlertLevel)
         {
-            GameOver();
+            LoseLevel();
         }
 
         alertLevel = Mathf.Clamp(alertLevel, 0f, maxAlertLevel);
     }
 
-    private void GameOver()
+    private void LoseLevel()
     {
-        Debug.LogWarning("You lose!");
+        loseScreen.SetActive(true);
+    }
+
+    public void StartGame()
+    {
+        isPlaying = true;
+
+        splashUI.SetActive(false);
+
+        camsParent.Action(true);
+
+        hackerAnimController.SetTrigger("startGame");
+    }
+
+    public void WinLevel()
+    {
+        winScreen.SetActive(true);
+    }
+
+    public bool GetIsPlaying()
+    {
+        return isPlaying;
     }
 }
