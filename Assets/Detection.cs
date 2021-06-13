@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserDetection : MonoBehaviour
+public class Detection : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {

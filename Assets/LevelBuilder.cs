@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class LevelBuilder : MonoBehaviour
 {
-    [SerializeField] int depth = 5;
+    [SerializeField] int THREE_LASER_INDEX = 2;
+
+    [SerializeField] int minDepth = 10;
+    private int depth;
     [SerializeField] int pieceHeight = 3;
     [SerializeField] int minBasicsFirst = 3;
 
     [SerializeField] GameObject[] basicPieces;
     [SerializeField] GameObject[] specialPieces;
     [SerializeField] GameObject floorPiece;
+
+    private bool lastPlacedWas3Laser = false;
+    private bool lastPlacedWasBasic = true;
 
     public static LevelBuilder Instance { get; private set; }
 
@@ -24,6 +30,8 @@ public class LevelBuilder : MonoBehaviour
         {
             Instance = this;
         }
+
+        depth = PersistentSceneManager.Instance.GetCurrentLevel() + minDepth;
     }
 
     private void Start()
@@ -34,23 +42,60 @@ public class LevelBuilder : MonoBehaviour
             {
                 Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - pieceHeight * i);
                 Instantiate(floorPiece, spawnPosition, Quaternion.identity, transform);
+                lastPlacedWas3Laser = false;
+                lastPlacedWasBasic = false;
             }
             else if (i < minBasicsFirst)
             {
-                Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - pieceHeight * i);
-
-                int rand = UnityEngine.Random.Range(0, basicPieces.Length);
-                Instantiate(basicPieces[rand], spawnPosition, Quaternion.identity, transform);
+                SpawnBasic(i);
             }
             else
             {
-                Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - pieceHeight * i);
+                if (lastPlacedWas3Laser)
+                {
+                    SpawnBasic(i);
+                }
+                else
+                {
+                    int randChanceOfBasic = UnityEngine.Random.Range(0, specialPieces.Length + 1);
 
-                int rand = UnityEngine.Random.Range(0, specialPieces.Length);
+                    if (randChanceOfBasic == 0)
+                    {
+                        SpawnBasic(i);
+                    }
+                    else
+                    {
+                        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - pieceHeight * i);
 
-                Instantiate(specialPieces[rand], spawnPosition, Quaternion.identity, transform);
+                        int rand = UnityEngine.Random.Range(0, specialPieces.Length);
+
+                        if (!lastPlacedWasBasic && rand == THREE_LASER_INDEX)
+                        {
+                            rand = UnityEngine.Random.Range(0, THREE_LASER_INDEX);
+                        }
+
+                        Instantiate(specialPieces[rand], spawnPosition, Quaternion.identity, transform);
+
+                        lastPlacedWasBasic = false;
+
+                        if (rand == THREE_LASER_INDEX)
+                        {
+                            lastPlacedWas3Laser = true;
+                        }
+                    }
+                }
             }
         }
+    }
+
+    private void SpawnBasic(int i)
+    {
+        Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y - pieceHeight * i);
+
+        int rand = UnityEngine.Random.Range(0, basicPieces.Length);
+        Instantiate(basicPieces[rand], spawnPosition, Quaternion.identity, transform);
+        lastPlacedWas3Laser = false;
+        lastPlacedWasBasic = true;
     }
 
     public float GetFloorYPos()

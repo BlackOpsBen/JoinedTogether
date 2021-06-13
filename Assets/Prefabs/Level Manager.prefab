@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f161d1818b9974fb3219b54620387b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depth: 10
+  THREE_LASER_INDEX: 3
+  minDepth: 10
   pieceHeight: 6
   minBasicsFirst: 3
   basicPieces:
@@ -55,6 +56,7 @@ MonoBehaviour:
   specialPieces:
   - {fileID: 1100423795140963493, guid: d01fcc605b3e6854e95692db21d1873b, type: 3}
   - {fileID: 1100423795140963493, guid: 0c9eca14814d97f468318b983de33c7d, type: 3}
+  - {fileID: 1100423795140963493, guid: c053fec1c3e3ec448a26f73b00dda76f, type: 3}
   - {fileID: 1100423795140963493, guid: 21749da1cb5d70648b5c8e12139ab0d7, type: 3}
   floorPiece: {fileID: 1100423795140963493, guid: e27f73b93d8e4834cba74d4363f8cf66, type: 3}
 --- !u!1001 &3124779107025619941

@@ -44,4 +44,9 @@ public class PersistentSceneManager : MonoBehaviour
     {
         currentLevel++;
     }
+
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
+    }
 }
