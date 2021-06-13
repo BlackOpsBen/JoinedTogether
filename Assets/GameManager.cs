@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -42,6 +43,11 @@ public class GameManager : MonoBehaviour
         {
         Instance = this;
         }
+
+        if (PersistentSceneManager.Instance.GetHasStarted())
+        {
+            StartGame();
+        }
     }
 
     public bool GetHasObjective()
@@ -75,11 +81,6 @@ public class GameManager : MonoBehaviour
         alertLevel = Mathf.Clamp(alertLevel, 0f, maxAlertLevel);
     }
 
-    private void LoseLevel()
-    {
-        loseScreen.SetActive(true);
-    }
-
     public void StartGame()
     {
         isPlaying = true;
@@ -89,15 +90,29 @@ public class GameManager : MonoBehaviour
         camsParent.Action(true);
 
         hackerAnimController.SetTrigger("startGame");
+
+        PersistentSceneManager.Instance.SetHasStarted(true);
     }
 
     public void WinLevel()
     {
         winScreen.SetActive(true);
+        Invoke("Restart", 1f);
+    }
+
+    private void LoseLevel()
+    {
+        loseScreen.SetActive(true);
+        Invoke("Restart", 1f);
     }
 
     public bool GetIsPlaying()
     {
         return isPlaying;
+    }
+
+    private void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 }

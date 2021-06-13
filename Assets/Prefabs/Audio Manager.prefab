@@ -1,0 +1,401 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7815817139067639301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7815817139067639302}
+  - component: {fileID: 7815817139067639303}
+  - component: {fileID: 7815817139067639300}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7815817139067639302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815817139067639301}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7815817139067639303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815817139067639301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5d1dbde71108f48936f28f6d18619b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFX:
+  - name: Hacking
+    clip: {fileID: 8300000, guid: 2af00dd5ee67ae34bbd3f65e9ed6a687, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: Line Down
+    clip: {fileID: 8300000, guid: a680f2ddcf342144a9c820570fdcbe95, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: Line Up
+    clip: {fileID: 8300000, guid: 729208b23c7d2694d94c51870054b5d2, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+  sfxGroups:
+  - name: Punches
+    options:
+    - name: 
+      clip: {fileID: 8300000, guid: 350582941f81c6a4ea83335c6738e003, type: 3}
+      volume: 0.5
+      pitch: 1
+      source: {fileID: 0}
+    - name: 
+      clip: {fileID: 8300000, guid: f3a7aaa62c7fd764597a9c632e2a55c7, type: 3}
+      volume: 0.5
+      pitch: 1
+      source: {fileID: 0}
+  characterSoundGroups:
+  - name: Thief
+    soundCategories:
+    - name: Up
+      options:
+      - name: 
+        clip: {fileID: 8300000, guid: 706eb2489ce37a044a1e7b8a2614e0dd, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 36a974d8167c3b4429b586800bcd8fbc, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 89f7f5f22c6f0e9488189e82e6ff3c5c, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 6d8c1c53d8a3a024394ef4cbbbd421ae, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 5c785a7c73288134f8848bb3b50e6fb5, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: a9d52c08f5a61d2438c151fb623805d4, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 8c0e04fe87c6fe049b113e7a2a1f4ed9, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+    - name: Down
+      options:
+      - name: 
+        clip: {fileID: 8300000, guid: c387d47a6f2f71749bf859f97091ca4d, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 4a6622a802ba21948869b2a31bf548bb, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 6835b96cff91b834a938abd511dd3f76, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: f516277df538ada49a17de605cb466b8, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: a89e4c6fdfa923a438ad85926634db89, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: f4bca2df70e15ca469a155d96729ecb7, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 980925d7dff169842bee9831336c653f, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 52779687db73b5a46a0956cc38cd4164, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: cf8a63981b542d544bc75feaa863c63d, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+    - name: Exclaim
+      options:
+      - name: 
+        clip: {fileID: 8300000, guid: 034fc73a57d77f94c99dc7a02635cec3, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 7754e1a65688a20448cb211f0c2e5fbd, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 97490fc8e2c65964ab01d2aa9dd91dd1, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 9db55a1d4a9463740b99d31ce8378fab, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: ff1f3ae6c3ca50142bc448dde3e89a59, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: b24e233260b406241bf1ad81d36b01eb, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 7638e7ce78bae8e4b9beeb94e36d77d8, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: f58e6153b5a45504795ff47ab7f4e566, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: fea45465d3dc75d46a67eb3c50b4850f, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+    - name: Got It
+      options:
+      - name: 
+        clip: {fileID: 8300000, guid: 2cde76c359d498f458fb7cbce730313f, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 60a107476a2f0b846abf3c5002fe79bf, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 61060b9205b881a469bdab5e248515c2, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 0ac80a0de7f64e04db94bffd609d56f2, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+  - name: Cleaner
+    soundCategories:
+    - name: Go Fight
+      options:
+      - name: 
+        clip: {fileID: 8300000, guid: 51975b13c266d9349a1461f5d5b0843d, type: 3}
+        volume: 0.75
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 8b9b76af0337d73428f3bfe11b128bd9, type: 3}
+        volume: 0.75
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: f9949b60c4bc97c459572c5a0fb9c60d, type: 3}
+        volume: 0.75
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: d5c5dbe37b4a51b4e891f78332bdff43, type: 3}
+        volume: 0.75
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 49369580f79962c4eba49af417f49497, type: 3}
+        volume: 0.75
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 842cb7524f165434dacb9bf383c83eb7, type: 3}
+        volume: 0.75
+        pitch: 1
+        source: {fileID: 0}
+    - name: Kill
+      options:
+      - name: 
+        clip: {fileID: 8300000, guid: 2b4ee6757e4a437429387238ebf57278, type: 3}
+        volume: 0.75
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: c543e335b1e6a6a41ba09d96a2ef8f0f, type: 3}
+        volume: 0.75
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 2cc2f3899b219844f8560ef8797ad33d, type: 3}
+        volume: 0.75
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: c286a08bf66897c4f9f081ea4604b104, type: 3}
+        volume: 0.75
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 3e1a386ca0296b148905a3dfe9ecde0d, type: 3}
+        volume: 0.75
+        pitch: 1
+        source: {fileID: 0}
+  - name: Hacker
+    soundCategories:
+    - name: Hacking
+      options:
+      - name: 
+        clip: {fileID: 8300000, guid: 51975b13c266d9349a1461f5d5b0843d, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+  - name: Guard
+    soundCategories:
+    - name: Spot
+      options:
+      - name: 
+        clip: {fileID: 8300000, guid: 270f15151ab6d12439f1e1a27a8d2801, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 5126d1d2f4957dc4ba596d7ef033d851, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 0d2da10a96faba44cadc73629d025c39, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 80ff83cc94fd593438dce7591983eb9d, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 846de2fb05db0774f836650eb8076c9e, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 32a1ff4a7722c5e40806dfc0fcc99f4b, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 4507dd1818edb1347b9f62cd3909e26a, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+    - name: Dead
+      options:
+      - name: 
+        clip: {fileID: 8300000, guid: 38a1cb7f138c11e4498e76b542a47f7e, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: a4d8d2d70ee11c14a8875c0fa9faa618, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 2e497f0133b0d074c981cccdb0a0a35c, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 2191be25bc1b13e4f8a15bc2d16d4c06, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 4c4954aacbd6dd949aaa0776f57ded0b, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 85bafcf98288cfc4c87175405d45b48c, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: e9fb4f399e586614c8d6b7a62bfd8996, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 773a95a9e73b2344ea1cbd6424c5f7c0, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+      - name: 
+        clip: {fileID: 8300000, guid: 7fd0a16da7506e149b643c4068ec44e5, type: 3}
+        volume: 0.5
+        pitch: 1
+        source: {fileID: 0}
+  reminders: []
+--- !u!114 &7815817139067639300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815817139067639301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c84335d29521e40a5424f904a7b326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 1
