@@ -2911,7 +2911,7 @@ PrefabInstance:
       objectReference: {fileID: 97412699}
     - target: {fileID: 3347937305425979954, guid: ad9e5a01170062142ab7c8c33e66b6c6, type: 3}
       propertyPath: floorStopDistance
-      value: 2.75
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3347937305425979955, guid: ad9e5a01170062142ab7c8c33e66b6c6, type: 3}
       propertyPath: m_RootOrder
