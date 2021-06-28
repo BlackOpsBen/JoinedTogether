@@ -14,8 +14,6 @@ public class SpawnRope : MonoBehaviour
         //int numToSpawn = ropePerMod * LevelBuilder.Instance.GetDepth() * 100;
         int numToSpawn = ropePerMod * 100;
 
-        Debug.Log("Num to spawn: " + numToSpawn.ToString());
-
         for (int i = 0; i < numToSpawn; i++)
         {
             Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y + initialYOffset + ySize * i, transform.position.z);

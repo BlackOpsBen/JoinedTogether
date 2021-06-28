@@ -61,6 +61,8 @@ public class DisableCamera : MonoBehaviour
         hackIcon.SetActive(false);
         hackReminder.SetActive(false);
 
+        AudioManager.Instance.PlaySFX("Switch2");
+
         isDisabled = true;
     }
 

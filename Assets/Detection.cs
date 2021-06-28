@@ -8,7 +8,11 @@ public class Detection : MonoBehaviour
     {
         GameManager.Instance.AdjustAlertLevel(GameManager.Instance.LASER_INITIAL_ALERT_RATE);
 
+        GameManager.Instance.ShakeCamera();
+
         AudioManager.Instance.PlayDialog(AudioManager.CHARACTER_THIEF, AudioManager.CATEGORY_THIEF_EXCLAIM, false);
+
+        AudioManager.Instance.PlaySFX("Warning");
     }
 
     private void OnTriggerStay2D(Collider2D collision)

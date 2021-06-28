@@ -40,6 +40,7 @@ public class GuardSpawner : MonoBehaviour
 
     private void Spawn()
     {
-        Instantiate(prefab, transform.position, Quaternion.identity, transform);
+        bool male = (UnityEngine.Random.Range(0, 2) == 0);
+        Instantiate(prefab, transform.position, Quaternion.identity, transform).GetComponent<GuardDeath>().male = male;
     }
 }

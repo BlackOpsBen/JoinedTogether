@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public static int CHARACTER_CLEANER = 1;
     public static int CHARACTER_HACKER = 2;
     public static int CHARACTER_GUARD = 3;
+    public static int CHARACTER_GUARD2 = 4;
 
     public static int CATEGORY_THIEF_UP = 0;
     public static int CATEGORY_THIEF_DOWN = 1;
@@ -25,6 +26,8 @@ public class AudioManager : MonoBehaviour
     public static int CATEGORY_GUARD_DEAD = 1;
 
     public static int SFX_GROUP_PUNCHES = 0;
+
+    public static float LISTENING_DISTANCE = 5f;
 
     public static AudioManager Instance { get; private set; }
 
@@ -54,16 +57,7 @@ public class AudioManager : MonoBehaviour
         SingletonPattern();
         CreateAudioSources(ref SFX);
         CreateAudioSources(ref reminders);
-        for (int i = 0; i < characterSoundGroups.Length; i++)
-        {
-            for (int j = 0; j < characterSoundGroups[i].soundCategories.Length; j++)
-            {
-                for (int k = 0; k < characterSoundGroups[i].soundCategories[j].options.Length; k++)
-                {
 
-                }
-            }
-        }
         foreach (SoundGroup sg in characterSoundGroups)
         {
             foreach (SoundCategory dc in sg.soundCategories)
@@ -197,6 +191,20 @@ public class AudioManager : MonoBehaviour
     public bool GetIsSomeoneSpeaking()
     {
         return someoneIsSpeaking;
+    }
+
+    public void ToggleLineDown(bool value)
+    {
+        string name = "Line Down";
+        Sound s = Array.Find(SFX, sound => sound.name == name);
+        if (value)
+        {
+            s.source.volume = 1;
+        }
+        else
+        {
+            s.source.volume = 0;
+        }
     }
 }
 

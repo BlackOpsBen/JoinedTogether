@@ -29,6 +29,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnGrabLeft(bool performed)
+    {
+        if (performed)
+        {
+            isGrabbingLeft = true;
+        }
+        else
+        {
+            isGrabbingLeft = false;
+        }
+    }
+
     public void OnGrabRight(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -36,6 +48,18 @@ public class PlayerController : MonoBehaviour
             isGrabbingRight = true;
         }
         else if (context.canceled)
+        {
+            isGrabbingRight = false;
+        }
+    }
+
+    public void OnGrabRight(bool performed)
+    {
+        if (performed)
+        {
+            isGrabbingRight = true;
+        }
+        else
         {
             isGrabbingRight = false;
         }

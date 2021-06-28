@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] CamerasToPos camsParent;
     [SerializeField] Animator hackerAnimController;
     [SerializeField] GameObject instructionsUI;
+    [SerializeField] GameObject alertUI;
+    [SerializeField] GameObject levelUI;
 
     [Header("Win/Lose Handling")]
     [SerializeField] GameObject winScreen;
@@ -39,6 +41,8 @@ public class GameManager : MonoBehaviour
     private bool isPlaying = false;
 
     private bool hasLostLevel = false;
+
+    private CameraShake shake;
 
     private void Awake()
     {
@@ -58,6 +62,8 @@ public class GameManager : MonoBehaviour
         {
             StartGame();
         }
+
+        shake = Camera.main.GetComponent<CameraShake>();
     }
 
     public bool GetHasObjective()
@@ -96,7 +102,7 @@ public class GameManager : MonoBehaviour
 
         if (alertLevel > warnThreshold && !alreadyWarned)
         {
-            AudioManager.Instance.PlayDialogOverOthers(AudioManager.CHARACTER_HACKER, AudioManager.CATEGORY_HACKER_WARNING);
+            AudioManager.Instance.PlayDialog(AudioManager.CHARACTER_HACKER, AudioManager.CATEGORY_HACKER_WARNING, false);
             alreadyWarned = true;
         }
 
@@ -112,6 +118,10 @@ public class GameManager : MonoBehaviour
 
         splashUI.SetActive(false);
 
+        alertUI.SetActive(true);
+
+        levelUI.SetActive(true);
+
         camsParent.Action(true);
 
         hackerAnimController.SetTrigger("startGame");
@@ -123,9 +133,12 @@ public class GameManager : MonoBehaviour
 
     public void WinLevel()
     {
+        AdjustAlertLevel(-100);
         isPlaying = false;
         winScreen.SetActive(true);
         PersistentSceneManager.Instance.IncreaseLevel();
+        AudioManager.Instance.PlaySFX("Win");
+        MusicManager.Instance.SwapTracks();
         Invoke("Restart", 1f);
     }
 
@@ -133,6 +146,7 @@ public class GameManager : MonoBehaviour
     {
         loseScreen.SetActive(true);
         PersistentSceneManager.Instance.IncreaseFailures();
+        AudioManager.Instance.PlaySFX("Alarm");
         Invoke("Restart", 1f);
     }
 
@@ -144,5 +158,15 @@ public class GameManager : MonoBehaviour
     private void Restart()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void ShakeCamera()
+    {
+        shake.AddShake(1);
     }
 }

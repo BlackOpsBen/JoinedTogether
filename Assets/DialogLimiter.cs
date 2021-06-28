@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogLimiter : MonoBehaviour
 {
-    private float[] timers = new float[4];
+    private float[] timers = new float[5];
     [SerializeField] private float interval = 5f;
 
     private void Start()

@@ -51,12 +51,18 @@ public class SpotPlayer : MonoBehaviour
 
     private void RaiseAlarm()
     {
-        // TODO implement spotting
         GameManager.Instance.AdjustAlertLevel(GameManager.Instance.GUARD_ALERT_RATE * Time.deltaTime);
 
         if (!alreadyRaisedAlarm)
         {
-            AudioManager.Instance.PlayDialogOverOthers(AudioManager.CHARACTER_GUARD, AudioManager.CATEGORY_GUARD_SPOT);
+            if (GetComponent<GuardDeath>().male)
+            {
+                AudioManager.Instance.PlayDialog(AudioManager.CHARACTER_GUARD2, AudioManager.CATEGORY_GUARD_SPOT, false);
+            }
+            else
+            {
+                AudioManager.Instance.PlayDialog(AudioManager.CHARACTER_GUARD, AudioManager.CATEGORY_GUARD_SPOT, false);
+            }
             alreadyRaisedAlarm = true;
             timer = 0f;
         }

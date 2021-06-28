@@ -5,7 +5,7 @@ using UnityEngine;
 public class CleanerDialog : MonoBehaviour
 {
     private bool isRoping = false;
-    private bool hasSpoken = false;
+    private bool hasSpoken = true;
 
     [SerializeField] PlayerController playerController;
 

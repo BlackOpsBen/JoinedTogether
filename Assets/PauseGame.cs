@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour
 {
+    private bool isPaused = false;
+
+    [SerializeField] GameObject pauseScreen;
     public void OnPause()
     {
-        MusicManager.Instance.SwapTracks();
-        Debug.LogWarning("Music swapped");
+        if (isPaused)
+        {
+            Time.timeScale = 1;
+            isPaused = false;
+            pauseScreen.SetActive(false);
+        }
+        else
+        {
+            Time.timeScale = 0;
+            isPaused = true;
+            pauseScreen.SetActive(true);
+        }
     }
 }

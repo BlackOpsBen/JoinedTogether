@@ -28,6 +28,8 @@ public class ThiefMovement : MonoBehaviour
     private AnimationSwitcher hackerAnimSwitcher;
     private AnimationSwitcher cleanerAnimSwitcher;
 
+    [SerializeField] RotateWheel rotateWheel;
+
     private void Awake()
     {
         hackerAnimSwitcher = GameObject.FindGameObjectWithTag("Hacker").GetComponent<AnimationSwitcher>();
@@ -79,6 +81,8 @@ public class ThiefMovement : MonoBehaviour
 
     private void Move(int direction) // TODO separate Movement from Dialog
     {
+        rotateWheel.SetRotationDirection(direction);
+
         if (direction != prevDirection)
         {
             hasSpokenDirection = false;
@@ -112,6 +116,16 @@ public class ThiefMovement : MonoBehaviour
         }
 
         float newYPos = Mathf.Min(transform.position.y + speed * speedMultiplier * direction * Time.deltaTime, maxYPos);
+
+        if (newYPos < minYPos + floorStopDistance)
+        {
+            AudioManager.Instance.ToggleLineDown(false);
+        }
+        else
+        {
+            AudioManager.Instance.ToggleLineDown(true);
+        }
+
         newYPos = Mathf.Max(newYPos, minYPos + floorStopDistance);
 
         transform.position = new Vector2(transform.position.x, newYPos);

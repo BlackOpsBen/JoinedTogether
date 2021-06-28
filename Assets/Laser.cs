@@ -16,6 +16,8 @@ public class Laser : MonoBehaviour
 
     private bool isOn = false;
 
+    private bool hasPlayedSwitchSound = false;
+
     private void Start()
     {
         if (randomInitialOffset)
@@ -36,17 +38,32 @@ public class Laser : MonoBehaviour
     private void ToggleLaser()
     {
         laserObject.SetActive(isOn);
+        if (!hasPlayedSwitchSound && Vector2.Distance(laserObject.transform.position, Camera.main.transform.position) < AudioManager.LISTENING_DISTANCE)
+        {
+            AudioManager.Instance.PlaySFX("Switch1");
+            hasPlayedSwitchSound = true;
+        }
     }
 
     private void SetIsOn()
     {
         if (timer > offTime)
         {
+            if (isOn != true)
+            {
+                hasPlayedSwitchSound = false;
+            }
+
             isOn = true;
         }
 
         if (timer > offTime + onTime)
         {
+            if (isOn != false)
+            {
+                hasPlayedSwitchSound = false;
+            }
+
             isOn = false;
             timer = 0f;
         }
